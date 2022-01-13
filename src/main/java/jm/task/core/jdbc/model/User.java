@@ -1,12 +1,16 @@
 package jm.task.core.jdbc.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Entity
 @Table
 public class User {
     @Id
+    @GeneratedValue
     private Long id;
 
     @Column
@@ -59,4 +63,6 @@ public class User {
     public void setAge(Byte age) {
         this.age = age;
     }
+
+    public String toString() { return getName() + " " + getLastName() + ", "+getAge()+" years old"; }
 }
